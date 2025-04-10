@@ -588,7 +588,7 @@
     // Share Item
     function shareItem() {
       const item = {
-        id: item-${Date.now()},
+        id: `item-${Date.now()}`,
         name: document.getElementById('itemName').value,
         description: document.getElementById('itemDescription').value,
         price: parseFloat(document.getElementById('itemPrice').value),
@@ -676,8 +676,8 @@
         
         const rentalStatus = rentals.find(r => r.itemId === item.id && !r.returned);
         const statusBadge = rentalStatus 
-          ? <span class="badge bg-danger">Rented Out</span> 
-          : <span class="badge bg-success">Available</span>;
+          ? `<span class="badge bg-danger">Rented Out</span>` 
+          : `<span class="badge bg-success">Available</span>`;
         
         itemCard.innerHTML = `
           <div class="card h-100 item-card">
@@ -769,7 +769,7 @@
 
       // Create rental record
       const rental = {
-        id: rental-${Date.now()},
+        id: `rental-${Date.now()}`,
         itemId: item.id,
         itemName: item.name,
         owner: item.owner,
